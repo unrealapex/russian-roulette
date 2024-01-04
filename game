@@ -6,7 +6,7 @@ sudo echo
 # RussianRouletteGame
 
 number=$((1 + RANDOM % 10))
-read -p "Guess a number between 1 and 10" guess
+read -p "Guess a number between 1 and 10: " guess
 
 if [[ "$number" -eq "$guess" ]]; then
   echo "You Won!"
