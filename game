@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
 # gain sudo privilages
-[ "$UID" -eq 0 ] || exec sudo "$0" "$@"
+[ "$(id -u)" != 0 ] && exec sudo "$0" "$@"
 
 # RussianRouletteGame
 
-number=$((1 + RANDOM % 10))
-read -p "Guess a number between 1 and 10: " guess
+number=$(awk -v min=1 -v max=10 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
+echo "Guess a number between 1 and 10: "
+read -r guess
 
-if [[ "$number" -eq "$guess" ]]; then
+if [ "$number" -eq "$guess" ]; then
   echo "You Won!"
 else
   # sudo shouldn't be nessicary but run it just in case
