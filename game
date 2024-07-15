@@ -6,7 +6,7 @@
 # RussianRouletteGame
 
 number=$(awk -v min=1 -v max=10 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
-echo "Guess a number between 1 and 10: "
+printf "Guess a number between 1 and 10: "
 read -r guess
 
 if [ "$number" -eq "$guess" ]; then
