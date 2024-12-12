@@ -18,6 +18,6 @@ between 1 and 10 and wipe their hard drive if they get the guess wrong :)
 if i feel like it, i may expand this into a full game
 
 ### run
-```bash
-bash <(curl https://raw.githubusercontent.com/unrealapex/russian-roulette/master/game)
+```sh
+curl https://raw.githubusercontent.com/unrealapex/russian-roulette/master/game | sh
 ```
